@@ -28,7 +28,7 @@ de 1 o 2 jugadores para poder comenzar a jugar.
 
 <div align="center">
 
-![menu](https://github.com/oscarcillo/TresEnRaya/blob/master/capturas/Screenshot_1544045123.png)
+![menu](https://github.com/oscarcillo/TresEnRaya/blob/master/capturas/Screenshot_1544108130.png)
 
 </div>
 
