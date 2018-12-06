@@ -21,7 +21,7 @@ de 1 o 2 jugadores para poder comenzar a jugar.
   posibilidades de hacer tres en raya, la máquina marcará la casilla
   necesaria para bloquear esa posibilidad.
   * **Imposible**: es igual que la dificultad anterior, aunque tiene algunas
-  situaciones programadas para que anule cualquier posibilidad de ganarle.
+  situaciones programadas para que anule todas las posibilidades de ganarle.
   Es imposible ganar, aunque se puede llegar a un empate.
 
 * **2 jugadores**: Jugarás contra otra persona en el mismo móvil.
@@ -51,6 +51,8 @@ combinación ganadora. Unos segundos después, se restablecerá la forma
 de la interfaz que había inicialmente, y podremos volver a jugar otra
 partida.
 
+La aplicación está en dos idiomas: Español e Inglés.
+
 ## Código fuente
 
 [Enlace a las clases Java](https://github.com/oscarcillo/TresEnRaya/tree/master/app/src/main/java/com/otr/tres_en_raya)
@@ -61,4 +63,4 @@ partida.
 
 ## Descarga de la apk
 
-[Enlace de descarga de la .apk](https://raw.githubusercontent.com/oscarcillo/TresEnRaya/master/app/release/tresenraya.apk)
+[Enlace de descarga de la .apk](https://raw.githubusercontent.com/oscarcillo/TresEnRaya/master/app/release/app-release.apk)

@@ -7,7 +7,7 @@
 
     <string name="facil">Easy</string>
     <string name="normal">Normal</string>
-    <string name="imposible">Insane</string>
+    <string name="imposible">Hard</string>
 
     <string name="gana_jugador1">PLAYER 1 WINS!</string>
     <string name="gana_jugador2">PLAYER 2 WINS!</string>

@@ -9,7 +9,7 @@
 
     <string name="facil">Fácil</string>
     <string name="normal">Normal</string>
-    <string name="imposible">Imposible</string>
+    <string name="imposible">Difícil</string>
 
     <string name="gana_jugador2">HA GANADO EL JUGADOR 2!</string>
     <string name="gana_jugador1">HA GANADO EL JUGADOR 1!</string>

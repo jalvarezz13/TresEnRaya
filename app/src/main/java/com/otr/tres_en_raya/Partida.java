@@ -53,6 +53,85 @@ public class Partida {
         return casilla;
     }
 
+    public int numeroCasillasSeleccionadas(int jugador){
+        int contador = 0;
+        for(int i = 0; i < casillas_seleccionadas.length; i++){
+            if(casillas_seleccionadas[i]==jugador)
+                contador++;
+        }
+        return contador;
+    }
+
+    public int combinacionesConAspa(){
+
+        int [][] combinaciones = getCombinaciones();
+        int casilla = -1;
+        int [] combinaciones_aspa = new int[8];
+
+        int casilla0 = 0;
+        int casilla2 = 0;
+        int casilla6 = 0;
+        int casilla8 = 0;
+
+        //comprobar que combinaciones tienen aspa
+        for(int i = 0; i < getCombinaciones().length; i++){
+            for(int j = 0; j < 3; j++){
+                if(casillas_seleccionadas[combinaciones[i][j]]==1)
+                    combinaciones_aspa[i]=1;
+            }
+        }
+        //comprobar que casilla cortaría más combinaciones
+        for(int i = 0; i < getCombinaciones().length; i++){
+            if(combinaciones_aspa[i]==1){
+                for(int j = 0; j < 3; j++){
+                    if(combinaciones[i][j]==0 && casillas_seleccionadas[combinaciones[i][j]]==0)
+                        casilla0++;
+                    else if(combinaciones[i][j]==2 && casillas_seleccionadas[combinaciones[i][j]]==0)
+                        casilla2++;
+                    else if(combinaciones[i][j]==6 && casillas_seleccionadas[combinaciones[i][j]]==0)
+                        casilla6++;
+                    else if(combinaciones[i][j]==8 && casillas_seleccionadas[combinaciones[i][j]]==0)
+                        casilla8++;
+                }
+            }
+        }
+
+        if(casilla0==2)
+            return 0;
+        else if(casilla2==2)
+            return 2;
+        else if(casilla6==2)
+            return 6;
+        else if(casilla8==2)
+            return 8;
+
+        return -1;
+    }
+
+    public int dosEnRayaGanar(){
+
+        int [][] combinaciones = getCombinaciones();
+        int casilla = -1;
+        int cuantas_lleva = 0;
+
+        for(int i = 0; i < getCombinaciones().length; i++){
+            cuantas_lleva = 0;
+            for(int j = 0; j < 3; j++){
+                if(casillas_seleccionadas[combinaciones[i][j]]==2)
+                    cuantas_lleva++;
+                if(casillas_seleccionadas[combinaciones[i][j]]==1)
+                    cuantas_lleva--;
+            }
+            if(cuantas_lleva==1){
+                for(int j = 0; j < 3; j++){
+                    if(casillas_seleccionadas[combinaciones[i][j]]==0)
+                        return combinaciones[i][j];
+                }
+            }
+        }
+        return casilla;
+    }
+
     public int ia(){
 
         int casilla;
@@ -81,10 +160,20 @@ public class Partida {
             }
 
             case 2:{
-                if(casillas_seleccionadas[4]==0)
-                    return 4;
 
-                //primero comprueba si puede hacer un movimiento para ganar
+                //seleccionar casilla opuesta si es el primer turno
+                if(numeroCasillasSeleccionadas(1)==1) {
+                    if(casillas_seleccionadas[1]==1 && casillas_seleccionadas[7]==0)
+                        return 7;
+                    else  if(casillas_seleccionadas[3]==1 && casillas_seleccionadas[5]==0)
+                        return 5;
+                    else  if(casillas_seleccionadas[5]==1 && casillas_seleccionadas[3]==0)
+                        return 3;
+                    else  if(casillas_seleccionadas[7]==1 && casillas_seleccionadas[1]==0)
+                        return 1;
+                }
+
+                // si puede ganar
                 casilla = dosEnRaya(2);
                 if(casilla!=-1) {
                     return casilla;
@@ -96,6 +185,7 @@ public class Partida {
                     return casilla;
                 }
 
+
                 //si el jugador pone un aspa en la casilla inferior derecha o izquierda
                 //y si ya habia un circulo en el centro, el jugador pone un circulo en la casilla del centro de abajo
                 if(casillas_seleccionadas[4]==2 && (casillas_seleccionadas[6]==1 || casillas_seleccionadas[8]==1) &&
@@ -103,15 +193,23 @@ public class Partida {
                     return 7;
                 }
 
-                //comprueba si las esquinas estan vacias
+                //recorrer combinaciones para ver que combinacion tiene mas aspas para bloquear
+                //posibles combinaciones ganadoras
+                if(combinacionesConAspa()!=-1)
+                    return combinacionesConAspa();
+
+                if(casillas_seleccionadas[4]==0)
+                    return 4;
+
+                //marcar una esquina
+                if(casillas_seleccionadas[0]==0)
+                    return 0;
+                if(casillas_seleccionadas[2]==0)
+                    return 2;
+                if(casillas_seleccionadas[6]==0)
+                    return 6;
                 if(casillas_seleccionadas[8]==0)
                     return 8;
-                else if( casillas_seleccionadas[6]==0)
-                    return 6;
-                else if(casillas_seleccionadas[2]==0)
-                    return 2;
-                else if( casillas_seleccionadas[0]==0)
-                    return 0;
 
                 //generar numero aleatorio
                 Random aleatorio = new Random();
