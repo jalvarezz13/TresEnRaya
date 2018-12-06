@@ -26,7 +26,11 @@ de 1 o 2 jugadores para poder comenzar a jugar.
 
 * **2 jugadores**: Jugarás contra otra persona en el mismo móvil.
 
+<div align="center">
+
 ![menu](https://github.com/oscarcillo/TresEnRaya/blob/master/capturas/Screenshot_1544045123.png)
+
+</div>
 
 Una vez seleccionada una de las dos opciones de juego, el menú de la izquierda
 se hará invisible lentamente, y después la cuadrícula de juego
@@ -34,7 +38,11 @@ se moverá con una transición al centro de la pantalla. Ahora ya se puede
 comenzar a jugar, simplemente seleccionando una de las 9 casillas
 de la cuadrícula.
 
+<div align="center">
+
 ![partida](https://github.com/oscarcillo/TresEnRaya/blob/master/capturas/Screenshot_1544045168.png)
+
+</div>
 
 Justo después de terminar la partida, aparecerá un texto en la parte
 superior de la pantalla indicando cual de los dos jugadores ha ganado,
