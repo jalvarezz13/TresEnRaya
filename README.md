@@ -59,6 +59,6 @@ partida.
 
 [Enlace a la carpeta res](https://github.com/oscarcillo/TresEnRaya/tree/master/app/src/main/res)
 
-## Descarga de la .apk
+## Descarga de la apk
 
 [Enlace de descarga de la .apk](https://raw.githubusercontent.com/oscarcillo/TresEnRaya/master/app/release/tresenraya.apk)
