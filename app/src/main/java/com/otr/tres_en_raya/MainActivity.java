@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout menu;
     private LinearLayout espacio1;
 
+    /**
+     * Metodo que se ejecuta cuando se crea la actividad
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
             RadioButton r = findViewById(R.id.radio_facil);
     }
 
+    /**
+     * Metodo que se ejecuta al seleccionar uno de los dos modos de juego para comenzar la partida
+     * @param view Identifica que vista ha sido pulsada
+     */
     public void jugar(View view) {
 
         ImageView imagen;
@@ -110,6 +118,10 @@ public class MainActivity extends AppCompatActivity {
         partida = new Partida(dificultad);
     }
 
+    /**
+     * Metodo que se ejecuta al pulsar una casilla
+     * @param view Identifica que vista ha sido pulsada
+     */
     public void tocarCasilla(View view){
 
         if(partida==null)
@@ -144,6 +156,10 @@ public class MainActivity extends AppCompatActivity {
             marcarCasilla(casilla);
     }
 
+    /**
+     * Metodo que marca una casilla con un aspa o con un circulo
+     * @param casilla Numero de la casilla que se marcara
+     */
     private void marcarCasilla(int casilla){
 
         ImageView imagen;
@@ -279,6 +295,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Metodo que tacha con una linea roja la combinación ganadora
+     * @param n Numero de la combinacion ganadora
+     */
     public void tachar(int n){
         ImageView tachado = findViewById(tachados[n]);
 
