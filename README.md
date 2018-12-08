@@ -63,4 +63,4 @@ La aplicación está en dos idiomas: Español e Inglés.
 
 ## Descarga de la apk
 
-[Enlace de descarga de la .apk](https://raw.githubusercontent.com/oscarcillo/TresEnRaya/master/app/release/app-release.apk)
+[Enlace de descarga de la .apk](https://raw.githubusercontent.com/oscarcillo/TresEnRaya/master/app/release/tresenraya.apk)
