@@ -161,6 +161,11 @@ public class Partida {
 
             case 2:{
 
+                if(casillas_seleccionadas[1]==1&&casillas_seleccionadas[8]==1 && casillas_seleccionadas[0]==0)
+                    return 0;
+                else if(casillas_seleccionadas[1]==1&&casillas_seleccionadas[6]==1 && casillas_seleccionadas[0]==0)
+                    return 0;
+
                 //seleccionar casilla opuesta si es el primer turno
                 if(numeroCasillasSeleccionadas(1)==1) {
                     if(casillas_seleccionadas[1]==1 && casillas_seleccionadas[7]==0)
